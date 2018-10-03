@@ -6,27 +6,9 @@
 
 using namespace std;
 
-void PrintString(char* string) {
-	while (*string != NULL) {
-		cout << *string;
-		string++;
-	}
-}
-
 int main() {
 
-	int a = 10;
-
-	char myChar = 'a';
-	char myString[6] = { 'H','e','l','l','o', NULL };
-
-	cout << "The value of char variable on the stack: " << myChar;
-	cout << "\nThe value of string variable on the heap: ";
-	PrintString(myString);
-
-	cin >> a;
-
-	/*int a;
+	int a;
 
 	int* b;
 
@@ -45,7 +27,7 @@ int main() {
 	delete b;
 	b = NULL;
 
-	cin >> *b;*/
+	cin >> *b;
 
 	return 0;
 }
