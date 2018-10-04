@@ -6,6 +6,13 @@
 
 using namespace std;
 
+void PrintString(char* string) {
+	while (*string != NULL) {
+		cout << *string;
+		string++;
+	}
+}
+
 int main() {
 
 	int a = 10;
@@ -38,7 +45,7 @@ int main() {
 	delete b;
 	b = NULL;
 
-	cin >> *b;
+	cin >> *b;*/
 
 	return 0;
 }
