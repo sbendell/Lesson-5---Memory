@@ -8,7 +8,18 @@ using namespace std;
 
 int main() {
 
-	int a;
+	int a = 10;
+
+	char myChar = 'a';
+	char* myString = new char[6] { 'H','e','l','l','o', NULL };
+
+	cout << "The value of char variable on the stack: " << myChar;
+	cout << "\nThe value of string variable on the heap: ";
+	PrintString(myString);
+
+	cin >> a;
+
+	/*int a;
 
 	int* b;
 
