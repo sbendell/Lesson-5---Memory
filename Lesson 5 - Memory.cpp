@@ -23,6 +23,7 @@ int main() {
 	cout << "The value of char variable on the stack: " << myChar;
 	cout << "\nThe value of string variable on the heap: ";
 	PrintString(myString);
+	delete[] myString;
 
 	cin >> a;
 
