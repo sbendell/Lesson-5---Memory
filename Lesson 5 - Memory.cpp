@@ -59,7 +59,7 @@ void terminate_tree(struct node* tree) {
 		terminate_tree(tree->left);
 		terminate_tree(tree->right);
 		delete tree;
-		cout << "Deleted node at " << tree;
+		cout << "Deleted node at " << tree << "\n";
 	}
 }
 
