@@ -13,6 +13,24 @@ void PrintString(char* string) {
 	}
 }
 
+struct node {
+	int value;
+	struct node* left;
+	struct node* right;
+};
+
+void insert_integer(struct node* tree, int value){
+
+}
+
+void print_tree(struct node* tree) {
+
+}
+
+void terminate_tree(struct node* tree) {
+
+}
+
 int main() {
 
 	int a = 10;
