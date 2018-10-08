@@ -13,6 +13,10 @@ BinaryTree::BinaryTree(int* numbers, int size)
 	}
 }
 
+node* BinaryTree::get_primary_node() {
+	return primaryNode;
+}
+
 void BinaryTree::insert_integer(struct node* leaf, int value) {
 	if (value < leaf->value) {
 		if (leaf->left == NULL) {
