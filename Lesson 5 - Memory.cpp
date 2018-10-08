@@ -26,18 +26,16 @@ int main() {
 	PrintString(myString);
 	delete[] myString;*/
 
-	node* primaryNode = new node;
-	primaryNode->value = 10;
-	primaryNode->left = NULL;
-	primaryNode->right = NULL;
+	int* nums = new int[9]{ 5, 4, 8, 2, 3, 1, 6, 9, 8};
 
+	BinaryTree tree(nums, 9);
+	delete nums;
 
 	for (int i = 1; i < 20; i++) {
-		insert_integer(primaryNode, i);
+		tree.insert_integer(tree.get_primary_node(), i);
 	}
 
-	print_tree(primaryNode);
-	terminate_tree(primaryNode);
+	tree.print_tree(tree.get_primary_node());
 
 	cin >> a;
 

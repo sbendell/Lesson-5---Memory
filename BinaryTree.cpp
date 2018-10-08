@@ -7,7 +7,11 @@ using namespace std;
 BinaryTree::BinaryTree(int* numbers, int size)
 {
 	primaryNode = new node();
-	for (int i = 0; i < size; i++)
+	primaryNode->value = numbers[0];
+	primaryNode->left = NULL;
+	primaryNode->right = NULL;
+
+	for (int i = 1; i < size; i++)
 	{
 		insert_integer(primaryNode, numbers[i]);
 	}
