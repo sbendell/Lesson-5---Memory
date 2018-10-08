@@ -4,8 +4,13 @@
 using namespace std;
 
 
-BinaryTree::BinaryTree()
+BinaryTree::BinaryTree(int* numbers, int size)
 {
+	primaryNode = new node();
+	for (int i = 0; i < size; i++)
+	{
+		insert_integer(primaryNode, numbers[i]);
+	}
 }
 
 void BinaryTree::insert_integer(struct node* leaf, int value) {

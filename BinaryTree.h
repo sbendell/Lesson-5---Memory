@@ -10,7 +10,7 @@ struct node {
 class BinaryTree
 {
 public:
-	BinaryTree();
+	BinaryTree(int* numbers, int size);
 	~BinaryTree();
 	node* get_primary_node();
 	void insert_integer(struct node* tree, int value);
