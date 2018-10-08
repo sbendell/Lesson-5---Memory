@@ -3,6 +3,7 @@
 
 #include "stdafx.h"
 #include <iostream>
+#include "BinaryTree.h"
 
 using namespace std;
 
@@ -10,56 +11,6 @@ void PrintString(char* string) {
 	while (*string != NULL) {
 		cout << *string;
 		string++;
-	}
-}
-
-struct node {
-	int value;
-	struct node* left;
-	struct node* right;
-};
-
-void insert_integer(struct node* tree, int value){
-	if (value < tree->value) {
-		if (tree->left == NULL) {
-			tree->left = new node();
-			tree->left->value = value;
-			tree->left->left = NULL;
-			tree->left->right = NULL;
-		}
-		else {
-			insert_integer(tree->left, value);
-		}
-	}
-	else {
-		if (tree->right == NULL) {
-			tree->right = new node();
-			tree->right->value = value;
-			tree->right->left = NULL;
-			tree->right->right = NULL;
-		}
-		else {
-			insert_integer(tree->right, value);
-		}
-	}
-}
-
-void print_tree(struct node* tree) {
-	if (tree->left != NULL)
-		print_tree(tree->left);
-
-	if (tree->right != NULL)
-		print_tree(tree->right);
-
-	cout << tree->value << "\n";
-}
-
-void terminate_tree(struct node* tree) {
-	if (tree != NULL) {
-		terminate_tree(tree->left);
-		terminate_tree(tree->right);
-		delete tree;
-		cout << "Deleted node at " << tree << "\n";
 	}
 }
 
@@ -75,18 +26,19 @@ int main() {
 	PrintString(myString);
 	delete[] myString;*/
 
-	node* primaryNode = new node;
-	primaryNode->value = 10;
-	primaryNode->left = NULL;
-	primaryNode->right = NULL;
+	int* nums = new int[9]{ 5, 4, 8, 2, 3, 1, 6, 9, 8};
 
+	BinaryTree tree(nums, 9);
+	delete nums;
 
 	for (int i = 1; i < 20; i++) {
-		insert_integer(primaryNode, i);
+		tree.insert_integer(tree.get_primary_node(), i);
 	}
 
-	print_tree(primaryNode);
-	terminate_tree(primaryNode);
+	tree.print_tree(tree.get_primary_node());
+
+	cout << "Tree contains 6: " << tree.Search(tree.get_primary_node(), 6);
+	cout << "\nTree contains 26: " << tree.Search(tree.get_primary_node(), 26);
 
 	cin >> a;
 
