@@ -37,6 +37,9 @@ int main() {
 
 	tree.print_tree(tree.get_primary_node());
 
+	cout << "Tree contains 6: " << tree.Search(tree.get_primary_node(), 6);
+	cout << "\nTree contains 26: " << tree.Search(tree.get_primary_node(), 26);
+
 	cin >> a;
 
 	/*int a;
