@@ -8,8 +8,7 @@ BinaryTree::BinaryTree()
 {
 }
 
-
-void insert_integer(struct node* tree, int value) {
+void BinaryTree::insert_integer(struct node* tree, int value) {
 	if (value < tree->value) {
 		if (tree->left == NULL) {
 			tree->left = new node();
@@ -34,7 +33,7 @@ void insert_integer(struct node* tree, int value) {
 	}
 }
 
-void print_tree(struct node* tree) {
+void BinaryTree::print_tree(struct node* tree) {
 	if (tree->left != NULL)
 		print_tree(tree->left);
 
@@ -44,15 +43,16 @@ void print_tree(struct node* tree) {
 	cout << tree->value << "\n";
 }
 
-void terminate_tree(struct node* tree) {
-	if (tree != NULL) {
-		terminate_tree(tree->left);
-		terminate_tree(tree->right);
-		delete tree;
-		cout << "Deleted node at " << tree << "\n";
+void BinaryTree::terminate_tree(struct node* leaf) {
+	if (leaf != NULL) {
+		terminate_tree(leaf->left);
+		terminate_tree(leaf->right);
+		delete leaf;
+		cout << "Deleted node at " << leaf << "\n";
 	}
 }
 
 BinaryTree::~BinaryTree()
 {
+	terminate_tree(primaryNode);
 }

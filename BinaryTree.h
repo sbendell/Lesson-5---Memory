@@ -12,9 +12,11 @@ class BinaryTree
 public:
 	BinaryTree();
 	~BinaryTree();
+	node* get_primary_node();
 	void insert_integer(struct node* tree, int value);
 	void print_tree(struct node* tree);
-private:
 	void terminate_tree(struct node* tree);
+private:
+	node* primaryNode;
 };
 
