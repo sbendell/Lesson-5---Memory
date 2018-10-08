@@ -8,39 +8,39 @@ BinaryTree::BinaryTree()
 {
 }
 
-void BinaryTree::insert_integer(struct node* tree, int value) {
-	if (value < tree->value) {
-		if (tree->left == NULL) {
-			tree->left = new node();
-			tree->left->value = value;
-			tree->left->left = NULL;
-			tree->left->right = NULL;
+void BinaryTree::insert_integer(struct node* leaf, int value) {
+	if (value < leaf->value) {
+		if (leaf->left == NULL) {
+			leaf->left = new node();
+			leaf->left->value = value;
+			leaf->left->left = NULL;
+			leaf->left->right = NULL;
 		}
 		else {
-			insert_integer(tree->left, value);
+			insert_integer(leaf->left, value);
 		}
 	}
 	else {
-		if (tree->right == NULL) {
-			tree->right = new node();
-			tree->right->value = value;
-			tree->right->left = NULL;
-			tree->right->right = NULL;
+		if (leaf->right == NULL) {
+			leaf->right = new node();
+			leaf->right->value = value;
+			leaf->right->left = NULL;
+			leaf->right->right = NULL;
 		}
 		else {
-			insert_integer(tree->right, value);
+			insert_integer(leaf->right, value);
 		}
 	}
 }
 
-void BinaryTree::print_tree(struct node* tree) {
-	if (tree->left != NULL)
-		print_tree(tree->left);
+void BinaryTree::print_tree(struct node* leaf) {
+	if (leaf->left != NULL)
+		print_tree(leaf->left);
 
-	if (tree->right != NULL)
-		print_tree(tree->right);
+	if (leaf->right != NULL)
+		print_tree(leaf->right);
 
-	cout << tree->value << "\n";
+	cout << leaf->value << "\n";
 }
 
 void BinaryTree::terminate_tree(struct node* leaf) {
