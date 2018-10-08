@@ -65,6 +65,30 @@ void BinaryTree::terminate_tree(struct node* leaf) {
 	}
 }
 
+bool BinaryTree::Search(struct node* leaf, int value) const {
+	if (leaf != NULL) {
+		if (value == leaf->value) {
+			return true;
+		}
+		else if (value < leaf->value) {
+			if (leaf->left == NULL) {
+				return false;
+			}
+			else {
+				return Search(leaf->left, value);
+			}
+		}
+		else if (value > leaf->value) {
+			if (leaf->right == NULL) {
+				return false;
+			}
+			else {
+				return Search(leaf->right, value);
+			}
+		}
+	}
+}
+
 BinaryTree::~BinaryTree()
 {
 	terminate_tree(primaryNode);
