@@ -50,10 +50,10 @@ void BinaryTree::print_tree(struct node* leaf) {
 	if (leaf->left != NULL)
 		print_tree(leaf->left);
 
+	cout << leaf->value << "\n";
+
 	if (leaf->right != NULL)
 		print_tree(leaf->right);
-
-	cout << leaf->value << "\n";
 }
 
 void BinaryTree::terminate_tree(struct node* leaf) {
